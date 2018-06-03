@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue App</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+
+	{{ test }}
+
+	<select v-model="select">
+	   <option v-for="option in options" :value="option.value">{{ option.name }}</option>
+	</select>
+
+	<select v-if="select == 'toyota'">
+	  <option>A</option>
+	  <option>B</option>
+	  <option>C</option>
+	</select>
+
+	</div>
+<script>
+	new Vue ({
+	  el: '#app',
+	  data: {
+	  	test: "It works!",
+	  	select: 'mazda',
+	    options: [
+	      {value: 'kia', name: 'Kia'},
+	      {value: 'mazda', name: 'Mazda'},
+	      {value: 'honda', name: 'Honda'},
+	      {value: 'toyota', name: 'Toyota'}
+	    ]
+	  }
+	})
+</script>
+</body>
+</html>
